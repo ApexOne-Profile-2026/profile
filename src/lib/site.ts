@@ -1,27 +1,28 @@
 export const siteConfig = {
   name: "ApexOne",
   domain: "apexonemm.tech",
-  email: "hello@apexonemm.tech",
+  email: "solution@apexonemm.tech",
+  phones: ["+959 971238411", "+959943242548"] as const,
+  facebook: "https://web.facebook.com/apexonesolution/",
   tagline: "Software that moves business forward.",
 } as const;
 
-export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+export const navItems = [
+  { key: "home", href: "/" },
+  { key: "products", href: "/products" },
+  { key: "services", href: "/services" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contact" },
 ] as const;
 
-export const footerLinks = {
-  company: [
-    { href: "/products", label: "Products" },
-    { href: "/services", label: "Services" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-  ],
-  legal: [
-    { href: "/privacy", label: "Privacy" },
-    { href: "/terms", label: "Terms" },
-  ],
-} as const;
+export const footerCompanyItems = [
+  { key: "products", href: "/products" },
+  { key: "services", href: "/services" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contact" },
+] as const;
+
+export const footerLegalItems = [
+  { key: "privacy", href: "/privacy" },
+  { key: "terms", href: "/terms" },
+] as const;

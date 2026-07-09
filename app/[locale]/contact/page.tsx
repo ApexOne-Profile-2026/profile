@@ -1,27 +1,24 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { ContactDirectLines } from "@/src/components/ContactDirectLines";
 import { ContactForm } from "@/src/components/ContactForm";
 import { FadeIn } from "@/src/components/FadeIn";
+import { getDictionary, isLocale, type Locale } from "@/src/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Book a consultation or request a product demo with ApexOne. We’re ready to talk through your next build.",
-  alternates: { canonical: "/contact" },
-};
-
-interface ContactPageProps {
-  searchParams: Promise<{
-    product?: string;
-    intent?: string;
-  }>;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = getDictionary(isLocale(locale) ? (locale as Locale) : "en");
+  return { title: dict.pages.contact.title, description: dict.pages.contact.heroDescription };
 }
 
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const params = await searchParams;
-  const product = typeof params.product === "string" ? params.product : "";
-  const intent = typeof params.intent === "string" ? params.intent : "general";
+export default async function ContactPage({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<{ product?: string; intent?: string }> }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  const dict = getDictionary(locale as Locale);
+  const query = await searchParams;
+  const product = typeof query.product === "string" ? query.product : "";
+  const intent = typeof query.intent === "string" ? query.intent : "general";
 
   return (
     <main className="flex flex-1 flex-col">
@@ -35,11 +32,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         </div>
         <div className="mx-auto grid max-w-6xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-[4fr_8fr] lg:gap-12 lg:px-8">
           <FadeIn className="w-full self-start">
-            <ContactDirectLines />
+            <ContactDirectLines locale={locale as Locale} dict={dict} />
           </FadeIn>
-
           <FadeIn delayMs={90} className="w-full self-start">
-            <ContactForm initialProduct={product} initialIntent={intent} />
+            <ContactForm initialProduct={product} initialIntent={intent} dict={dict} />
           </FadeIn>
         </div>
       </section>

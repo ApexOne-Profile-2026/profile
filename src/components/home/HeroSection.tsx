@@ -2,9 +2,14 @@ import Link from "next/link";
 
 import { FadeIn } from "@/src/components/FadeIn";
 import { HeroLogo } from "@/src/components/home/HeroLogo";
-import { siteConfig } from "@/src/lib/site";
+import { defaultLocale, getDictionary, type Locale, localizeHref } from "@/src/lib/i18n";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  locale?: Locale;
+  dict?: ReturnType<typeof getDictionary>;
+}
+
+export function HeroSection({ locale = defaultLocale, dict = getDictionary(defaultLocale) }: HeroSectionProps) {
   return (
     <section className="relative isolate overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -22,30 +27,30 @@ export function HeroSection() {
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center lg:flex-col lg:items-start">
                 <HeroLogo className="lg:hidden" />
                 <p className="font-display text-sm font-semibold tracking-[0.22em] text-accent/80 uppercase">
-                  {siteConfig.name}
+                  {dict.home.eyebrow}
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delayMs={80}>
               <h1 className="mt-5 max-w-2xl bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.04em] text-transparent sm:text-4xl sm:leading-[1.1] lg:text-[2.75rem] xl:text-5xl">
-                Software that transforms how businesses run.
+                {dict.home.title}
               </h1>
             </FadeIn>
 
             <FadeIn delayMs={160}>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-                From production-ready platforms to custom software development. We engineer high-quality digital tools designed to help your business grow.
+                {dict.home.description}
               </p>
             </FadeIn>
 
             <FadeIn delayMs={240}>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link href="/products" className="btn-primary">
-                  Explore Products
+                <Link href={localizeHref(locale, "/products")} className="btn-primary">
+                  {dict.home.exploreProducts}
                 </Link>
-                <Link href="/contact" className="btn-secondary">
-                  Book a Consultation
+                <Link href={localizeHref(locale, "/contact")} className="btn-secondary">
+                  {dict.home.bookConsultation}
                 </Link>
               </div>
             </FadeIn>
@@ -69,18 +74,18 @@ export function HeroSection() {
             <div className="grid gap-4 p-5 sm:grid-cols-3 sm:p-6">
               {[
                 {
-                  label: "Checkout speed",
-                  value: "2.1s",
+                  label: "Our Clients",
+                  value: "8 +",
                   tone: "from-accent/15 to-accent/5",
                 },
                 {
-                  label: "Live outlets",
-                  value: "48",
+                  label: "Flagship Products",
+                  value: "12 +",
                   tone: "from-accent/12 to-accent/5",
                 },
                 {
-                  label: "Ops clarity",
-                  value: "96%",
+                  label: "Custom Software",
+                  value: "100%",
                   tone: "from-accent-secondary/15 to-accent/5",
                 },
               ].map((item) => (
