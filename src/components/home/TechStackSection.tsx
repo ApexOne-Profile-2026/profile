@@ -92,8 +92,8 @@ export function TechStackSection() {
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
           {techStack.map((tech, index) => (
             <FadeIn key={tech.name} delayMs={index * 70} as="div">
-              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-border/80 bg-background/80 px-4 py-6 text-center shadow-[0_1px_0_rgba(15,23,42,0.02)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_40px_-28px_rgba(14,165,233,0.45)]">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-foreground text-background transition-transform duration-300 group-hover:scale-105">
+              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-border/80 bg-background/80 px-4 py-6 text-center shadow-[0_1px_0_rgba(15,23,42,0.02)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[0_18px_40px_-28px_rgba(16,76,104,0.18)]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-white transition-transform duration-300 group-hover:scale-105">
                   {tech.mark}
                 </span>
                 <div>

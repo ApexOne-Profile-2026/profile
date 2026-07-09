@@ -6,9 +6,11 @@
   --foreground: #0b1220;
   --muted: #667085;
   --border: #e4e9f0;
-  --accent: #0b1220;
+  --accent: #104c68;
+  --accent-hover: #0d3f57;
+  --accent-light: #e8f1f5;
   --surface: #ffffff;
-  --accent-secondary: #0284c7;
+  --accent-secondary: #3a7a94;
   --surface-elevated: #f1f5f9;
   color-scheme: light;
 }
@@ -19,6 +21,8 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
   --color-surface: var(--surface);
   --color-accent-secondary: var(--accent-secondary);
   --color-surface-elevated: var(--surface-elevated);
@@ -47,7 +51,7 @@ body {
 }
 
 ::selection {
-  background: rgba(56, 189, 248, 0.25);
+  background: rgba(16, 76, 104, 0.18);
   color: #0b1220;
 }
 
@@ -58,7 +62,7 @@ body {
 .card-surface {
   background: var(--surface);
   border: 1px solid rgba(228, 233, 240, 0.9);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03), 0 24px 60px -40px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03), 0 24px 60px -40px rgba(15, 23, 42, 0.12);
 }
 
 .btn-primary {
@@ -67,18 +71,18 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background: #0b1220;
+  background: var(--accent);
   padding-inline: 1.75rem;
   font-size: 0.875rem;
   font-weight: 500;
   color: #ffffff;
   transition:
     transform 0.2s ease,
-    opacity 0.2s ease;
+    background-color 0.2s ease;
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  background: var(--accent-hover);
 }
 
 .btn-primary:active {
@@ -96,7 +100,7 @@ body {
   padding-inline: 1.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #0b1220;
+  color: var(--accent);
   backdrop-filter: blur(8px);
   transition:
     transform 0.2s ease,
@@ -105,8 +109,8 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #ffffff;
-  border-color: #cbd5e1;
+  background: var(--accent-light);
+  border-color: rgba(16, 76, 104, 0.25);
 }
 
 .btn-secondary:active {
@@ -117,17 +121,17 @@ body {
   --tw-prose-body: #475569;
   --tw-prose-headings: #0b1220;
   --tw-prose-lead: #667085;
-  --tw-prose-links: #0369a1;
+  --tw-prose-links: #104c68;
   --tw-prose-bold: #0b1220;
   --tw-prose-counters: #667085;
-  --tw-prose-bullets: #38bdf8;
+  --tw-prose-bullets: #104c68;
   --tw-prose-hr: #e4e9f0;
   --tw-prose-quotes: #667085;
-  --tw-prose-quote-borders: #38bdf8;
+  --tw-prose-quote-borders: #104c68;
   --tw-prose-captions: #667085;
-  --tw-prose-code: #0b1220;
+  --tw-prose-code: #104c68;
   --tw-prose-pre-code: #e2e8f0;
-  --tw-prose-pre-bg: #0b1220;
+  --tw-prose-pre-bg: #104c68;
   --tw-prose-th-borders: #e4e9f0;
   --tw-prose-td-borders: #e4e9f0;
 }

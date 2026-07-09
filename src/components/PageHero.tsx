@@ -23,7 +23,7 @@ export function PageHero({
       />
       <div className="relative mx-auto max-w-6xl px-4 pt-14 pb-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-14">
         <FadeIn>
-          <p className="font-display text-sm font-semibold tracking-[0.18em] text-sky-800/80 uppercase">
+          <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent uppercase">
             {eyebrow}
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl">

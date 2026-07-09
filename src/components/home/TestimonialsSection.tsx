@@ -15,7 +15,7 @@ export function TestimonialsSection() {
     <section className="relative overflow-hidden border-t border-border/70 bg-[linear-gradient(180deg,rgba(248,250,252,0.7)_0%,rgba(255,255,255,0.95)_100%)] py-20 sm:py-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-sky-300/15 blur-3xl"
+        className="pointer-events-none absolute -top-24 right-[-10%] h-72 w-72 rounded-full bg-accent/10 blur-3xl"
       />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
                 <div className="flex items-center gap-3">
                   <span
                     aria-hidden
-                    className="flex h-11 w-11 items-center justify-center rounded-full bg-foreground font-display text-sm font-semibold text-background"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-accent font-display text-white text-sm font-semibold text-background"
                   >
                     {initials(client.name)}
                   </span>
@@ -65,7 +65,7 @@ export function TestimonialsSection() {
                   </span>
                   <span
                     aria-hidden
-                    className="font-display text-2xl leading-none text-sky-500/70"
+                    className="font-display text-2xl leading-none text-accent/70"
                   >
                     ”
                   </span>

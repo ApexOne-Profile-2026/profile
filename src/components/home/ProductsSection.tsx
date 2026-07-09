@@ -4,9 +4,9 @@ import { FadeIn } from "@/src/components/FadeIn";
 import { products } from "@/src/data/products";
 
 const accents = [
-  "from-sky-500/25 via-sky-400/5 to-transparent",
-  "from-slate-800/20 via-slate-700/5 to-transparent",
-  "from-cyan-500/20 via-cyan-400/5 to-transparent",
+  "from-accent/20 via-accent/5 to-transparent",
+  "from-accent/15 via-accent/5 to-transparent",
+  "from-accent-secondary/15 via-accent/5 to-transparent",
 ] as const;
 
 export function ProductsSection() {
@@ -39,7 +39,7 @@ export function ProductsSection() {
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {products.map((product, index) => (
             <FadeIn key={product.id} delayMs={index * 90} as="article">
-              <article className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/80 bg-surface shadow-[0_1px_0_rgba(15,23,42,0.03)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
+              <article className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/80 bg-surface shadow-[0_1px_0_rgba(15,23,42,0.03)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
                 <div
                   className={`relative h-40 overflow-hidden bg-gradient-to-br ${accents[index % accents.length]}`}
                 >
@@ -66,7 +66,7 @@ export function ProductsSection() {
                       >
                         <span
                           aria-hidden
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"
+                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                         />
                         <span>{feature}</span>
                       </li>
@@ -74,7 +74,7 @@ export function ProductsSection() {
                   </ul>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="mt-7 inline-flex h-11 items-center justify-center rounded-full border border-border bg-background px-5 text-sm font-medium text-foreground transition-[background-color,border-color,transform] duration-200 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background active:scale-[0.98]"
+                    className="mt-7 inline-flex h-11 items-center justify-center rounded-full border border-border bg-background px-5 text-sm font-medium text-foreground transition-[background-color,border-color,transform] duration-200 group-hover:border-accent group-hover:bg-accent group-hover:text-white active:scale-[0.98]"
                   >
                     View Details
                   </Link>

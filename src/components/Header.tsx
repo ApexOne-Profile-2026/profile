@@ -54,15 +54,15 @@ export function Header() {
               className={[
                 "relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-200",
                 isActive(link.href)
-                  ? "text-foreground"
-                  : "text-muted hover:text-foreground",
+                  ? "text-accent"
+                  : "text-muted hover:text-accent",
               ].join(" ")}
             >
               {link.label}
               <span
                 aria-hidden
                 className={[
-                  "absolute inset-x-3.5 -bottom-0.5 h-px origin-left bg-foreground transition-transform duration-300",
+                  "absolute inset-x-3.5 -bottom-0.5 h-px origin-left bg-accent transition-transform duration-300",
                   isActive(link.href) ? "scale-x-100" : "scale-x-0",
                 ].join(" ")}
               />
@@ -131,8 +131,8 @@ export function Header() {
                 "rounded-xl px-4 py-3 text-base font-medium transition-all duration-300",
                 open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
                 isActive(link.href)
-                  ? "bg-foreground/[0.04] text-foreground"
-                  : "text-muted hover:bg-foreground/[0.03] hover:text-foreground",
+                  ? "bg-accent/8 text-accent"
+                  : "text-muted hover:bg-accent/5 hover:text-accent",
               ].join(" ")}
             >
               {link.label}

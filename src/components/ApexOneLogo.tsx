@@ -18,22 +18,21 @@ export function ApexOneLogo({
     <Link
       href="/"
       onClick={onClick}
-      className={`group inline-flex items-center gap-2.5 ${className}`}
+      className={`group inline-flex items-center gap-0.5 ${className}`}
       aria-label={`${siteConfig.name} home`}
     >
-      <span className="relative h-9 w-9 overflow-hidden rounded-full shadow-[0_0_0_1px_rgba(15,23,42,0.08)] transition-transform duration-300 group-hover:scale-[1.04] sm:h-10 sm:w-10">
-        <Image
-          src="/brand/apexone-logo.png"
-          alt=""
-          width={80}
-          height={80}
-          className="h-full w-full object-cover"
-          priority
-        />
-      </span>
+      <Image
+        src="/brand/apex-logo.png"
+        alt=""
+        width={88}
+        height={88}
+        className="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.04] sm:h-11 sm:w-11"
+        priority
+        unoptimized
+      />
       {showWordmark ? (
-        <span className="font-display text-[1.05rem] font-semibold tracking-[-0.03em] text-foreground">
-          Apex<span className="text-foreground/55">One</span>
+        <span className="-ml-1 font-display text-xl font-semibold tracking-[-0.03em] text-foreground sm:text-2xl">
+          pex<span className="text-accent">One</span>
         </span>
       ) : null}
     </Link>

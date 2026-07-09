@@ -50,9 +50,9 @@ export async function generateMetadata({
 }
 
 const accents = [
-  "from-sky-500/30 via-sky-300/10 to-transparent",
-  "from-slate-800/25 via-slate-600/10 to-transparent",
-  "from-cyan-500/25 via-cyan-300/10 to-transparent",
+  "from-accent/25 via-accent/8 to-transparent",
+  "from-accent/20 via-accent/8 to-transparent",
+  "from-accent-secondary/20 via-accent/8 to-transparent",
 ] as const;
 
 export default async function ProductPage({ params }: ProductPageProps) {
@@ -82,13 +82,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="relative mx-auto max-w-6xl px-4 pt-14 pb-16 sm:px-6 sm:pt-16 lg:px-8 lg:pb-20">
           <FadeIn>
             <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted">
-              <Link href="/" className="transition-colors hover:text-sky-700">
+              <Link href="/" className="transition-colors hover:text-accent">
                 Home
               </Link>
               <span aria-hidden>/</span>
               <Link
                 href="/products"
-                className="transition-colors hover:text-sky-700"
+                className="transition-colors hover:text-accent"
               >
                 Products
               </Link>
@@ -100,7 +100,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
               <FadeIn delayMs={60}>
-                <p className="font-display text-sm font-semibold tracking-[0.18em] text-sky-800/80 uppercase">
+                <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent uppercase">
                   ApexOne Product
                 </p>
                 <h1 className="mt-4 font-display text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl lg:text-6xl">
@@ -185,7 +185,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   >
                     <span
                       aria-hidden
-                      className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-500/15 text-sky-700"
+                      className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent"
                     >
                       <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none">
                         <path
@@ -227,7 +227,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <FadeIn key={item.id} delayMs={relatedIndex * 80}>
                   <Link
                     href={`/products/${item.slug}`}
-                    className="card-surface group flex h-full flex-col rounded-[1.35rem] p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-sky-200/80 hover:shadow-[0_24px_50px_-36px_rgba(15,23,42,0.35)]"
+                    className="card-surface group flex h-full flex-col rounded-[1.35rem] p-6 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[0_24px_50px_-36px_rgba(15,23,42,0.35)]"
                   >
                     <h3 className="font-display text-lg font-semibold tracking-[-0.03em] text-foreground">
                       {item.title}

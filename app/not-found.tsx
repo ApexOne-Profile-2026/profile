@@ -17,7 +17,7 @@ export default function NotFound() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(56,189,248,0.16),transparent_55%)]"
       />
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-4 py-20 sm:px-6 lg:px-8">
-        <p className="font-display text-sm font-semibold tracking-[0.22em] text-sky-800/80 uppercase">
+        <p className="font-display text-sm font-semibold tracking-[0.22em] text-accent uppercase">
           404
         </p>
         <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl">
@@ -43,7 +43,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-full px-4 text-sm font-medium text-muted transition-colors hover:text-sky-700"
+            className="inline-flex h-12 items-center justify-center rounded-full px-4 text-sm font-medium text-muted transition-colors hover:text-accent"
           >
             Contact us
           </Link>
@@ -58,7 +58,7 @@ export default function NotFound() {
             <Link
               key={item.href}
               href={item.href}
-              className="card-surface rounded-2xl px-5 py-4 transition-[border-color,transform] hover:-translate-y-0.5 hover:border-sky-200/80"
+              className="card-surface rounded-2xl px-5 py-4 transition-[border-color,transform] hover:-translate-y-0.5 hover:border-accent/25"
             >
               <p className="font-display text-sm font-semibold tracking-[-0.02em] text-foreground">
                 {item.label}

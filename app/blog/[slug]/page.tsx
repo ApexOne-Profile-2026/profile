@@ -78,13 +78,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 aria-label="Breadcrumb"
                 className="flex items-center gap-2 text-sm text-muted"
               >
-                <Link href="/" className="transition-colors hover:text-sky-700">
+                <Link href="/" className="transition-colors hover:text-accent">
                   Home
                 </Link>
                 <span aria-hidden>/</span>
                 <Link
                   href="/blog"
-                  className="transition-colors hover:text-sky-700"
+                  className="transition-colors hover:text-accent"
                 >
                   Blog
                 </Link>
@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </FadeIn>
 
             <FadeIn delayMs={70}>
-              <p className="mt-8 font-display text-sm font-semibold tracking-[0.18em] text-sky-800/80 uppercase">
+              <p className="mt-8 font-display text-sm font-semibold tracking-[0.18em] text-accent uppercase">
                 Insights
               </p>
               <h1 className="mt-4 font-display text-3xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl sm:leading-[1.08]">
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <FadeIn delayMs={100}>
           <div
             aria-hidden
-            className="mx-auto mt-8 h-48 max-w-4xl overflow-hidden rounded-[1.5rem] border border-border/80 bg-gradient-to-br from-sky-400/20 via-slate-100 to-cyan-300/20 sm:mt-10 sm:h-64"
+            className="mx-auto mt-8 h-48 max-w-4xl overflow-hidden rounded-[1.5rem] border border-border/80 bg-gradient-to-br from-accent/12 via-slate-100 to-accent-light sm:mt-10 sm:h-64"
           >
             <div className="flex h-full items-end p-6">
               <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <FadeIn>
-            <div className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:tracking-[-0.03em] prose-headings:text-foreground prose-p:text-foreground/85 prose-li:text-foreground/85 prose-strong:text-foreground prose-a:text-sky-700 hover:prose-a:text-sky-800">
+            <div className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:tracking-[-0.03em] prose-headings:text-foreground prose-p:text-foreground/85 prose-li:text-foreground/85 prose-strong:text-foreground prose-a:text-accent hover:prose-a:text-accent-hover">
               <BlogContent content={post.content} />
             </div>
           </FadeIn>
@@ -172,7 +172,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <FadeIn key={item.id} delayMs={index * 70}>
                   <Link
                     href={`/blog/${item.slug}`}
-                    className="card-surface group flex h-full flex-col rounded-[1.35rem] p-5 transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-sky-200/80"
+                    className="card-surface group flex h-full flex-col rounded-[1.35rem] p-5 transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-accent/25"
                   >
                     <time
                       dateTime={item.date}

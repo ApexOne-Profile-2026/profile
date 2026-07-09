@@ -46,7 +46,7 @@ export default function ServicesPage() {
                     <span className="font-display text-xs font-semibold tracking-[0.16em] text-muted uppercase">
                       0{index + 1}
                     </span>
-                    <span className="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-700">
+                    <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                       Service
                     </span>
                   </div>
@@ -64,7 +64,7 @@ export default function ServicesPage() {
                       >
                         <span
                           aria-hidden
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"
+                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                         />
                         <span>{outcome}</span>
                       </li>
@@ -76,10 +76,10 @@ export default function ServicesPage() {
           </div>
 
           <FadeIn delayMs={180}>
-            <div className="mt-14 overflow-hidden rounded-[1.75rem] border border-border/80 bg-foreground px-7 py-9 text-background sm:px-10 sm:py-11">
+            <div className="mt-14 overflow-hidden rounded-[1.75rem] border border-border/80 bg-accent px-7 py-9 text-white sm:px-10 sm:py-11">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                 <div className="max-w-2xl">
-                  <p className="font-display text-sm font-semibold tracking-[0.18em] text-sky-300 uppercase">
+                  <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent-secondary uppercase">
                     Engagement
                   </p>
                   <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">

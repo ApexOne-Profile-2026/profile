@@ -54,7 +54,7 @@ export function ContactForm({
   if (status === "success") {
     return (
       <div className="rounded-[1.5rem] border border-border/80 bg-surface p-8 text-center sm:p-10">
-        <p className="font-display text-sm font-semibold tracking-[0.18em] text-sky-800/80 uppercase">
+        <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent uppercase">
           Message received
         </p>
         <h2 className="mt-3 font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">
@@ -85,7 +85,7 @@ export function ContactForm({
   }
 
   const fieldClass =
-    "mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted/70 focus:border-sky-300 focus:ring-4 focus:ring-sky-100";
+    "mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent/10";
 
   return (
     <form
@@ -94,7 +94,7 @@ export function ContactForm({
       noValidate
     >
       {matchedProduct && intent === "demo" ? (
-        <div className="mb-6 rounded-2xl border border-sky-200/80 bg-sky-50/80 px-4 py-3 text-sm text-sky-950">
+        <div className="mb-6 rounded-2xl border border-accent/20 bg-accent-light/80 px-4 py-3 text-sm text-accent">
           Demo request for{" "}
           <span className="font-semibold">{matchedProduct.title}</span>. We’ll
           tailor the walkthrough to your workflow.

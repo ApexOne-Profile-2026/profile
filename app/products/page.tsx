@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const accents = [
-  "from-sky-500/25 via-sky-400/5 to-transparent",
-  "from-slate-800/20 via-slate-700/5 to-transparent",
-  "from-cyan-500/20 via-cyan-400/5 to-transparent",
+  "from-accent/20 via-accent/5 to-transparent",
+  "from-accent/15 via-accent/5 to-transparent",
+  "from-accent-secondary/15 via-accent/5 to-transparent",
 ] as const;
 
 export default function ProductsPage() {
@@ -40,7 +40,7 @@ export default function ProductsPage() {
           <div className="grid gap-4 md:grid-cols-3">
             {products.map((product, index) => (
               <FadeIn key={product.id} delayMs={index * 80} as="article">
-                <article className="card-surface group flex h-full flex-col overflow-hidden rounded-[1.5rem] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-sky-200/80 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
+                <article className="card-surface group flex h-full flex-col overflow-hidden rounded-[1.5rem] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
                   <div
                     className={`relative h-40 overflow-hidden bg-gradient-to-br ${accents[index % accents.length]}`}
                   >
@@ -67,7 +67,7 @@ export default function ProductsPage() {
                         >
                           <span
                             aria-hidden
-                            className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"
+                            className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                           />
                           <span>{feature}</span>
                         </li>
@@ -76,13 +76,13 @@ export default function ProductsPage() {
                     <div className="mt-7 flex flex-col gap-2 sm:flex-row">
                       <Link
                         href={`/products/${product.slug}`}
-                        className="btn-secondary h-11 flex-1 group-hover:border-sky-200 group-hover:"
+                        className="btn-secondary h-11 flex-1 group-hover:border-accent/25 group-hover:"
                       >
                         View Details
                       </Link>
                       <Link
                         href={`/contact?product=${product.slug}&intent=demo`}
-                        className="inline-flex h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-muted transition-colors hover:text-sky-700"
+                        className="inline-flex h-11 items-center justify-center rounded-full px-4 text-sm font-medium text-muted transition-colors hover:text-accent"
                       >
                         Demo
                       </Link>
