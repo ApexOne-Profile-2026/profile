@@ -1,26 +1,133 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfcfe;
+  --foreground: #0b1220;
+  --muted: #667085;
+  --border: #e4e9f0;
+  --accent: #0b1220;
+  --surface: #ffffff;
+  --accent-secondary: #0284c7;
+  --surface-elevated: #f1f5f9;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-surface-elevated: var(--surface-elevated);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background-color: #fbfcfe;
 }
 
 body {
-  background: var(--background);
+  min-height: 100%;
+  background-image:
+    radial-gradient(1200px 500px at 10% -10%, rgba(56, 189, 248, 0.08), transparent 55%),
+    radial-gradient(900px 420px at 90% 0%, rgba(15, 23, 42, 0.04), transparent 50%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #0b1220;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid rgba(228, 233, 240, 0.9);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03), 0 24px 60px -40px rgba(15, 23, 42, 0.2);
+}
+
+.btn-primary {
+  display: inline-flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #0b1220;
+  padding-inline: 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid #e4e9f0;
+  background: rgba(255, 255, 255, 0.8);
+  padding-inline: 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0b1220;
+  backdrop-filter: blur(8px);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.prose-apex {
+  --tw-prose-body: #475569;
+  --tw-prose-headings: #0b1220;
+  --tw-prose-lead: #667085;
+  --tw-prose-links: #0369a1;
+  --tw-prose-bold: #0b1220;
+  --tw-prose-counters: #667085;
+  --tw-prose-bullets: #38bdf8;
+  --tw-prose-hr: #e4e9f0;
+  --tw-prose-quotes: #667085;
+  --tw-prose-quote-borders: #38bdf8;
+  --tw-prose-captions: #667085;
+  --tw-prose-code: #0b1220;
+  --tw-prose-pre-code: #e2e8f0;
+  --tw-prose-pre-bg: #0b1220;
+  --tw-prose-th-borders: #e4e9f0;
+  --tw-prose-td-borders: #e4e9f0;
 }
