@@ -16,7 +16,7 @@ export function TestimonialsSection({ dict = getDictionary(defaultLocale) }: Tes
         <FadeIn>
           <div className="max-w-2xl">
             <p className="font-display text-sm font-semibold tracking-[0.18em] text-muted uppercase">{dict.home.testimonialsEyebrow}</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl">{dict.home.testimonialsTitle}</h2>
+            <h2 className="mt-3 bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">{dict.home.testimonialsTitle}</h2>
             <p className="mt-3 text-base leading-relaxed text-muted">{dict.home.testimonialsDescription}</p>
           </div>
         </FadeIn>

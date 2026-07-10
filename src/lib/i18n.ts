@@ -160,7 +160,7 @@ export const dictionary = {
         featuresCount: "Features",
         demoLabel: "Demo",
         demoValue: "Live",
-        overview: "Overview",
+        overview: "About this product",
         keyFeatures: "Key features",
         moreFromApex: "More from ApexOne",
         viewDetails: "View details",
@@ -227,12 +227,12 @@ export const dictionary = {
       techEyebrow: "ယုံကြည်ရသော နည်းပညာများ",
       techTitle: "ယနေ့ခေတ်အဖွဲ့များ ယုံကြည်အသုံးပြုသော tools များဖြင့် တည်ဆောက်ထားသည်။",
       productsEyebrow: "ထုတ်ကုန်များ",
-      productsTitle: "တကယ့်လုပ်ငန်းလည်ပတ်မှုအတွက် ဒီဇိုင်းလုပ်ထားသော platform များ။",
+      productsTitle: "လုပ်ငန်းလည်ပက်မှုများအတွက် အသင့်သုံး software platform များ။",
       productsDescription:
-        "ငွေရှင်းကောင်တာမှ စတင်၍ စာသင်ခန်းအထိ နေ့စဉ်အသုံးပြုရာတွင် မြန်ဆန်၊ ရှင်းလင်းပြီး ယုံကြည်စိတ်ချရသော product line သုံးခု။",
+        "နေ့စဉ်အသုံးပြုရာတွင် မြန်ဆန်၊ တိကျ ရှင်းလင်းပြီး ယုံကြည်စိတ်ချရသော ApexOne software products များ။",
       viewAllProducts: "ထုတ်ကုန်အားလုံး ကြည့်ရန်",
       viewDetails: "အသေးစိတ်ကြည့်ရန်",
-      testimonialsEyebrow: "ဖောက်သည်အမြင်များ",
+      testimonialsEyebrow: "ဖောက်သည် အမြင်များ",
       testimonialsTitle: "Launch ပြီးနောက် ပါတနာများ ပြောကြားချက်များ။",
       testimonialsDescription:
         "ApexOne ထုတ်ကုန်များကို နေ့စဉ်အသုံးပြုနေသော operators များထံမှ တကယ့်အတွေ့အကြုံများ။",
@@ -240,23 +240,23 @@ export const dictionary = {
     pages: {
       products: {
         title: "ထုတ်ကုန်များ",
-        heroTitle: "တကယ့်လုပ်ငန်းလည်ပတ်မှုအတွက် ဒီဇိုင်းလုပ်ထားသော platform များ။",
+        heroTitle: "လုပ်ငန်းလည်ပတ်မှုများအတွက် အသင့်သုံး software platform များ။",
         heroDescription:
           "Retail၊ property နှင့် education အတွက် product line သုံးခုကို အလွယ်တကူ အသုံးချနိုင်ပြီး တည်ငြိမ်စွာ လည်ပတ်နိုင်အောင် တည်ဆောက်ထားပါသည်။",
-        heroCta: "သင့်အသုံးပြုမှုအကြောင်း ပြောကြရအောင်",
+        heroCta: "သင့်လိုအပ်ချက်အကြောင်း ပြောကြရအောင်",
         cardBadge: "product",
-        customTitle: "ပိုမိုလိုက်ဖက်သော solution လိုပါသလား?",
+        customTitle: "ပိုမိုလိုက်ဖက်သော Customize solution လိုပါသလား?",
         customDescription:
-          "အထူး workflow များရှိသော အဖွဲ့များအတွက် tailored platform များကိုလည်း ဒီဇိုင်းနှင့် တည်ဆောက်ပေးပါသည်။",
+          "အထူး workflow များရှိသော အဖွဲ့များအတွက် custom software platform များကိုလည်း တည်ဆောက်ပေးပါသည်။",
         customCta: "ဝန်ဆောင်မှုများ ကြည့်ရန်",
         demo: "Demo",
       },
       services: {
         title: "ဝန်ဆောင်မှုများ",
-        heroTitle: "စိတ်ကူးစတင်ရာမှ production အထိ၊ ထို့နောက်ပိုင်းအထိ။",
+        heroTitle: "စိတ်ကူးစတင်ရာမှ production အထိ ဝန်ဆောင်မှု။",
         heroDescription:
           "Platform အသစ်တစ်ခု စတင်မလား၊ ApexOne product တစ်ခု အသုံးချမလား၊ product craft နှင့် engineering ကို တစ်ပြိုင်နက် ပံ့ပိုးပေးပါသည်။",
-        consultation: "အကြံပေး ချိန်းဆိုရန်",
+        consultation: "အခမ အကြံပေး ချိန်းဆိုရန်",
         seeProducts: "ထုတ်ကုန်များ ကြည့်ရန်",
         badge: "ဝန်ဆောင်မှု",
         engagement: "Engagement",
@@ -340,7 +340,7 @@ export const dictionary = {
         featuresCount: "Features",
         demoLabel: "Demo",
         demoValue: "Live",
-        overview: "Overview",
+        overview: "ဤထုတ်ကုန်အကြောင်း",
         keyFeatures: "အဓိက features များ",
         moreFromApex: "ApexOne မှ နောက်ထပ်",
         viewDetails: "အသေးစိတ်ကြည့်ရန်",

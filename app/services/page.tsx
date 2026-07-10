@@ -18,7 +18,6 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="From first sketch to production—and beyond."
-        description="Whether you’re launching a new platform or rolling out an ApexOne product, we pair product craft with engineering that holds up in daily use."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link

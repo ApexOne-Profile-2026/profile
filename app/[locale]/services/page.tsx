@@ -20,7 +20,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <main className="flex flex-1 flex-col">
-      <PageHero eyebrow={dict.pages.services.title} title={dict.pages.services.heroTitle} description={dict.pages.services.heroDescription}>
+      <PageHero eyebrow={dict.pages.services.title} title={dict.pages.services.heroTitle}>
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href={`${localizeHref(locale as Locale, "/contact")}?intent=consultation`} className="btn-primary h-11 px-6">{dict.pages.services.consultation}</Link>
           <Link href={localizeHref(locale as Locale, "/products")} className="btn-secondary h-11">{dict.pages.services.seeProducts}</Link>

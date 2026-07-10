@@ -33,13 +33,13 @@ export function HeroSection({ locale = defaultLocale, dict = getDictionary(defau
             </FadeIn>
 
             <FadeIn delayMs={80}>
-              <h1 className="mt-5 max-w-2xl bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-[2rem] leading-[1.12] font-semibold tracking-[-0.04em] text-transparent sm:text-4xl sm:leading-[1.1] lg:text-[2.75rem] xl:text-5xl">
+              <h1 className="mt-7 max-w-2xl bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-2xl leading-[1.35] font-semibold tracking-[-0.04em] text-transparent sm:mt-8 sm:text-[1.75rem] sm:leading-[1.38] lg:text-3xl lg:leading-[1.32] xl:text-[2.15rem]">
                 {dict.home.title}
               </h1>
             </FadeIn>
 
             <FadeIn delayMs={160}>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:mt-9 sm:text-lg">
                 {dict.home.description}
               </p>
             </FadeIn>

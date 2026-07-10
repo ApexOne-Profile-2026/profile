@@ -1,14 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { FadeIn } from "@/src/components/FadeIn";
-import { products } from "@/src/data/products";
+import { getLocalizedProduct, products } from "@/src/data/products";
 import { defaultLocale, getDictionary, type Locale, localizeHref } from "@/src/lib/i18n";
-
-const accents = [
-  "from-accent/20 via-accent/5 to-transparent",
-  "from-accent/15 via-accent/5 to-transparent",
-  "from-accent-secondary/15 via-accent/5 to-transparent",
-] as const;
 
 interface ProductsSectionProps {
   locale?: Locale;
@@ -16,6 +11,8 @@ interface ProductsSectionProps {
 }
 
 export function ProductsSection({ locale = defaultLocale, dict = getDictionary(defaultLocale) }: ProductsSectionProps) {
+  const localizedProducts = products.map((product) => getLocalizedProduct(product, locale));
+
   return (
     <section className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -25,7 +22,7 @@ export function ProductsSection({ locale = defaultLocale, dict = getDictionary(d
               <p className="font-display text-sm font-semibold tracking-[0.18em] text-muted uppercase">
                 {dict.home.productsEyebrow}
               </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl">
+              <h2 className="mt-3 bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">
                 {dict.home.productsTitle}
               </h2>
               <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">
@@ -39,16 +36,17 @@ export function ProductsSection({ locale = defaultLocale, dict = getDictionary(d
         </FadeIn>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {products.map((product, index) => (
+          {localizedProducts.map((product, index) => (
             <FadeIn key={product.id} delayMs={index * 90} as="article">
               <article className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/80 bg-surface shadow-[0_1px_0_rgba(15,23,42,0.03)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
-                <div className={`relative h-40 overflow-hidden bg-gradient-to-br ${accents[index % accents.length]}`}>
-                  <div className="absolute inset-0 [background-image:radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.55),transparent_35%),linear-gradient(135deg,transparent_40%,rgba(15,23,42,0.06)_100%)]" />
-                  <div className="absolute right-4 bottom-4 left-4">
-                    <span className="inline-flex rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">
-                      0{index + 1} / {dict.pages.products.cardBadge}
-                    </span>
-                  </div>
+                <div className="relative h-56 overflow-hidden bg-surface-elevated sm:h-60">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">

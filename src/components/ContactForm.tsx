@@ -3,7 +3,7 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { CheckCircle2, Mail } from "lucide-react";
 
-import { products } from "@/src/data/products";
+import { getLocalizedProduct, products } from "@/src/data/products";
 import { defaultLocale, getDictionary } from "@/src/lib/i18n";
 import { siteConfig } from "@/src/lib/site";
 
@@ -30,10 +30,10 @@ export function ContactForm({
   initialIntent = "general",
   dict = getDictionary(defaultLocale),
 }: ContactFormProps) {
-  const matchedProduct = useMemo(
-    () => products.find((product) => product.slug === initialProduct),
-    [initialProduct],
-  );
+  const matchedProduct = useMemo(() => {
+    const product = products.find((item) => item.slug === initialProduct);
+    return product ? getLocalizedProduct(product, defaultLocale) : undefined;
+  }, [initialProduct]);
   const intents = [
     { value: "general", label: dict.pages.contact.form.intents.general },
     { value: "demo", label: dict.pages.contact.form.intents.demo },

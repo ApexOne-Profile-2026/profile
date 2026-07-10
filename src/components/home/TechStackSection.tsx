@@ -18,7 +18,7 @@ export function TechStackSection({ dict = getDictionary(defaultLocale) }: TechSt
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-display text-sm font-semibold tracking-[0.18em] text-muted uppercase">{dict.home.techEyebrow}</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl">{dict.home.techTitle}</h2>
+            <h2 className="mt-3 bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">{dict.home.techTitle}</h2>
           </div>
         </FadeIn>
 

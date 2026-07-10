@@ -5,7 +5,7 @@ import { FadeIn } from "@/src/components/FadeIn";
 interface PageHeroProps {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
   children?: ReactNode;
 }
 
@@ -26,13 +26,15 @@ export function PageHero({
           <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent uppercase">
             {eyebrow}
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-[-0.04em] text-foreground sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            {description}
-          </p>
-          {children ? <div className="mt-8">{children}</div> : null}
+          {description ? (
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              {description}
+            </p>
+          ) : null}
+          {children ? <div className={description ? "mt-8" : "mt-6"}>{children}</div> : null}
         </FadeIn>
       </div>
     </section>

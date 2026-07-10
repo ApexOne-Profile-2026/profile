@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { FadeIn } from "@/src/components/FadeIn";
 import { PageHero } from "@/src/components/PageHero";
-import { products } from "@/src/data/products";
+import { getLocalizedProduct, products } from "@/src/data/products";
 import { getDictionary, isLocale, localizeHref, type Locale } from "@/src/lib/i18n";
-
-const accents = [
-  "from-accent/20 via-accent/5 to-transparent",
-  "from-accent/15 via-accent/5 to-transparent",
-  "from-accent-secondary/15 via-accent/5 to-transparent",
-] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -23,21 +18,27 @@ export default async function ProductsPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale as Locale);
+  const localizedProducts = products.map((product) => getLocalizedProduct(product, locale as Locale));
 
   return (
     <main className="flex flex-1 flex-col">
-      <PageHero eyebrow={dict.pages.products.title} title={dict.pages.products.heroTitle} description={dict.pages.products.heroDescription}>
+      <PageHero eyebrow={dict.pages.products.title} title={dict.pages.products.heroTitle}>
         <Link href={`${localizeHref(locale as Locale, "/contact")}?intent=consultation`} className="btn-primary h-11 px-6">{dict.pages.products.heroCta}</Link>
       </PageHero>
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-4 md:grid-cols-3">
-            {products.map((product, index) => (
+            {localizedProducts.map((product, index) => (
               <FadeIn key={product.id} delayMs={index * 80} as="article">
                 <article className="card-surface group flex h-full flex-col overflow-hidden rounded-[1.5rem] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
-                  <div className={`relative h-40 overflow-hidden bg-gradient-to-br ${accents[index % accents.length]}`}>
-                    <div className="absolute inset-0 [background-image:radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.55),transparent_35%)]" />
-                    <div className="absolute right-4 bottom-4 left-4"><span className="inline-flex rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">0{index + 1} / {dict.pages.products.cardBadge}</span></div>
+                  <div className="relative h-56 overflow-hidden bg-surface-elevated sm:h-60">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <h2 className="font-display text-xl font-semibold tracking-[-0.03em] text-foreground">{product.title}</h2>
