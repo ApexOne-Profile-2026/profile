@@ -35,7 +35,7 @@ export function ProductsSection({ locale = defaultLocale, dict = getDictionary(d
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {localizedProducts.map((product, index) => (
             <FadeIn key={product.id} delayMs={index * 90} as="article">
               <article className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/80 bg-surface shadow-[0_1px_0_rgba(15,23,42,0.03)] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-accent/25 hover:shadow-[0_28px_60px_-36px_rgba(15,23,42,0.35)]">
