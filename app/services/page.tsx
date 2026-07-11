@@ -3,16 +3,18 @@ import Link from "next/link";
 
 import { FadeIn } from "@/src/components/FadeIn";
 import { PageHero } from "@/src/components/PageHero";
-import { services } from "@/src/data/services";
+import { getLocalizedService, services } from "@/src/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "ApexOne services spanning product design, custom software, platform implementation, and ongoing iteration.",
+    "ApexOne services: mobile apps, websites, Odoo ERP, custom software, product design, and ongoing support.",
   alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
+  const localizedServices = services.map((service) => getLocalizedService(service, "en"));
+
   return (
     <main className="flex flex-1 flex-col">
       <PageHero
@@ -26,10 +28,7 @@ export default function ServicesPage() {
           >
             Book a consultation
           </Link>
-          <Link
-            href="/products"
-            className="btn-secondary h-11"
-          >
+          <Link href="/products" className="btn-secondary h-11">
             See products
           </Link>
         </div>
@@ -38,12 +37,12 @@ export default function ServicesPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-4 md:grid-cols-2">
-            {services.map((service, index) => (
+            {localizedServices.map((service, index) => (
               <FadeIn key={service.id} delayMs={index * 70} as="article">
                 <article className="card-surface flex h-full flex-col rounded-[1.5rem] p-6 sm:p-7">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-display text-xs font-semibold tracking-[0.16em] text-muted uppercase">
-                      0{index + 1}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                       Service
@@ -81,7 +80,7 @@ export default function ServicesPage() {
                   <p className="font-display text-sm font-semibold tracking-[0.18em] text-accent-secondary uppercase">
                     Engagement
                   </p>
-                  <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">
+                  <h2 className="mt-3 font-display text-xl font-semibold tracking-[-0.03em] sm:text-2xl">
                     Ready when clarity beats guesswork.
                   </h2>
                   <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">

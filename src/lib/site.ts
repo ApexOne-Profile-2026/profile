@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "ApexOne",
   domain: "apexonemm.tech",
   email: "solution@apexonemm.tech",
-  phones: ["+959 971238411", "+959943242548"] as const,
+  phones: ["+959 971238411", "+959 943242548"] as const,
   facebook: "https://web.facebook.com/apexonesolution/",
   tagline: "Software that moves business forward.",
 } as const;

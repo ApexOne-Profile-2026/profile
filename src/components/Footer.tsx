@@ -20,9 +20,6 @@ export function Footer({ locale, dict }: FooterProps) {
         <div className="col-span-2 max-w-sm space-y-3 lg:col-span-1">
           <ApexOneLogo />
           <p className="text-sm leading-relaxed text-muted">{dict.footer.description}</p>
-          <a href={`mailto:${siteConfig.email}`} className="inline-flex text-sm font-medium text-foreground transition-opacity hover:opacity-70">
-            {siteConfig.email}
-          </a>
         </div>
 
         <div className="justify-self-start">
@@ -53,9 +50,6 @@ export function Footer({ locale, dict }: FooterProps) {
                 </Link>
               </li>
             ))}
-            <li>
-              <span className="text-sm text-muted">{siteConfig.domain}</span>
-            </li>
           </ul>
         </div>
       </div>

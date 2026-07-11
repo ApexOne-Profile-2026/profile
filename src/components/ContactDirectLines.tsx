@@ -75,7 +75,7 @@ export function ContactDirectLines({
         <div className="inline-flex items-center rounded-full border border-border/70 bg-surface/80 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.22em] text-accent/80 uppercase">
           {dict.pages.contact.introEyebrow}
         </div>
-        <h2 className="mt-3 max-w-lg font-display text-[1.6rem] leading-tight font-semibold tracking-[-0.04em] text-foreground sm:text-[1.9rem]">
+        <h2 className="mt-3 max-w-lg bg-gradient-to-r from-accent via-accent-hover to-foreground bg-clip-text font-display text-xl font-semibold tracking-[-0.03em] text-transparent sm:text-2xl">
           {dict.pages.contact.introTitle}
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-7 text-muted sm:text-base">
