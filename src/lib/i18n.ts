@@ -310,7 +310,7 @@ export const dictionary = {
         title: "ထုတ်ကုန်များ",
         heroTitle: "လုပ်ငန်းလည်ပတ်မှုများအတွက် အသင့်သုံး software platform များ။",
         heroDescription:
-          "Retail၊ property နှင့် education အတွက် product line သုံးခုကို အလွယ်တကူ အသုံးချနိုင်ပြီး တည်ငြိမ်စွာ လည်ပတ်နိုင်အောင် တည်ဆောက်ထားပါသည်။",
+          "ApexOne မှ တည်ဆောက်ထားသော Software products များ။",
         heroCta: "သင့်လိုအပ်ချက်အကြောင်း ပြောကြရအောင်",
         cardBadge: "product",
         customTitle: "ပိုမိုလိုက်ဖက်သော Customize solution လိုပါသလား?",
