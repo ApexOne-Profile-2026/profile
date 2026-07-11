@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { FadeIn } from "@/src/components/FadeIn";
 import { HeroLogo } from "@/src/components/home/HeroLogo";
+import { HeroTechAmbient } from "@/src/components/home/HeroTechAmbient";
 import { defaultLocale, getDictionary, type Locale, localizeHref } from "@/src/lib/i18n";
 
 interface HeroSectionProps {
@@ -25,7 +26,12 @@ export function HeroSection({ locale = defaultLocale, dict = getDictionary(defau
           <div>
             <FadeIn>
               <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center lg:flex-col lg:items-start">
-                <HeroLogo className="lg:hidden" />
+                <div className="relative flex items-center justify-center lg:hidden">
+                  <div className="absolute top-1/2 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 sm:h-[20rem] sm:w-[20rem]">
+                    <HeroTechAmbient />
+                  </div>
+                  <HeroLogo className="relative z-10" />
+                </div>
                 <p className="font-display text-sm font-semibold tracking-[0.22em] text-accent/80 uppercase">
                   {dict.home.eyebrow}
                 </p>
@@ -56,8 +62,11 @@ export function HeroSection({ locale = defaultLocale, dict = getDictionary(defau
             </FadeIn>
           </div>
 
-          <FadeIn delayMs={120} className="hidden justify-center lg:flex">
-            <HeroLogo size="large" />
+          <FadeIn delayMs={120} className="relative hidden justify-center lg:flex">
+            <div className="absolute top-1/2 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 xl:h-[38rem] xl:w-[38rem]">
+              <HeroTechAmbient size="large" />
+            </div>
+            <HeroLogo size="large" className="relative z-10" />
           </FadeIn>
         </div>
 

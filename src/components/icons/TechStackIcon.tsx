@@ -1,7 +1,9 @@
-import { ArrowLeftRight, Blocks, Building2, Gauge, Network, PenTool, Plug } from "lucide-react";
+import { ArrowLeftRight, Blocks, Building2, Gauge, MonitorSmartphone, Network, PenTool, Plug } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
   siAlibabacloud,
+  siAndroid,
+  siApple,
   siBootstrap,
   siCodeigniter,
   siCoolify,
@@ -81,6 +83,8 @@ const techIconMap: Record<TechStackName, TechIconConfig> = {
   "React.js": brand(siReact),
   "Next.js": brand(siNextdotjs),
   Flutter: brand(siFlutter),
+  Android: brand(siAndroid),
+  iOS: brand(siApple),
   Java: {
     kind: "brand",
     path: siOpenjdk.path,
@@ -127,6 +131,12 @@ const techIconMap: Record<TechStackName, TechIconConfig> = {
     hex: "B45309",
     title: "Custom ERP modules",
   },
+  POS: {
+    kind: "lucide",
+    icon: MonitorSmartphone,
+    hex: "104C68",
+    title: "POS",
+  },
   MySQL: brand(siMysql),
   PostgreSQL: brand(siPostgresql),
   "SQL Optimization": {
@@ -161,11 +171,14 @@ const techIconMap: Record<TechStackName, TechIconConfig> = {
 interface TechStackIconProps {
   name: TechStackName;
   className?: string;
+  /** Override brand/lucide color (e.g. theme accent for monochrome treatments). */
+  color?: string;
 }
 
-export function TechStackIcon({ name, className = "h-4 w-4" }: TechStackIconProps) {
+export function TechStackIcon({ name, className = "h-4 w-4", color }: TechStackIconProps) {
   const config = techIconMap[name];
-  const needsContrast = config.hex.toUpperCase() === "F7DF1E";
+  const needsContrast = !color && config.hex.toUpperCase() === "F7DF1E";
+  const resolvedColor = color ?? `#${config.hex}`;
 
   if (config.kind === "brand") {
     return (
@@ -173,6 +186,7 @@ export function TechStackIcon({ name, className = "h-4 w-4" }: TechStackIconProp
         path={config.path}
         hex={config.hex}
         title={config.title}
+        color={resolvedColor}
         className={[className, needsContrast ? "drop-shadow-[0_0_0.35px_rgba(15,23,42,0.45)]" : ""].join(" ")}
       />
     );
@@ -183,7 +197,7 @@ export function TechStackIcon({ name, className = "h-4 w-4" }: TechStackIconProp
   return (
     <Icon
       className={className}
-      style={{ color: `#${config.hex}` }}
+      style={{ color: resolvedColor }}
       aria-label={config.title}
       strokeWidth={2}
     />

@@ -3,9 +3,11 @@ interface BrandIconProps {
   hex: string;
   title: string;
   className?: string;
+  /** Override brand color (e.g. theme accent for monochrome treatments). */
+  color?: string;
 }
 
-export function BrandIcon({ path, hex, title, className = "h-4 w-4" }: BrandIconProps) {
+export function BrandIcon({ path, hex, title, className = "h-4 w-4", color }: BrandIconProps) {
   return (
     <svg
       role="img"
@@ -14,7 +16,7 @@ export function BrandIcon({ path, hex, title, className = "h-4 w-4" }: BrandIcon
       className={className}
       aria-label={title}
     >
-      <path d={path} fill={`#${hex}`} />
+      <path d={path} fill={color ?? `#${hex}`} />
     </svg>
   );
 }
