@@ -4,7 +4,8 @@ import { ClientsSection } from "@/src/components/home/ClientsSection";
 import { HeroSection } from "@/src/components/home/HeroSection";
 import { ProductsSection } from "@/src/components/home/ProductsSection";
 import { TechStackSection } from "@/src/components/home/TechStackSection";
-import { TestimonialsSection } from "@/src/components/home/TestimonialsSection";
+// Temporary: hide Testimonials on home page
+// import { TestimonialsSection } from "@/src/components/home/TestimonialsSection";
 import { getDictionary, isLocale, type Locale } from "@/src/lib/i18n";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -18,7 +19,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ProductsSection locale={locale as Locale} dict={dict} />
       <ClientsSection dict={dict} />
       <TechStackSection dict={dict} />
-      <TestimonialsSection dict={dict} />
+      {/* <TestimonialsSection dict={dict} /> */}
     </main>
   );
 }

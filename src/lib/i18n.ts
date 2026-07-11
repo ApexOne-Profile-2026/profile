@@ -277,10 +277,10 @@ export const dictionary = {
       },
       services: {
         title: "ဝန်ဆောင်မှုများ",
-        heroTitle: "စိတ်ကူးစတင်ရာမှ production အထိ ဝန်ဆောင်မှု။",
+        heroTitle: "ApexOne မှ ဝန်ဆောင်မှုများ။",
         heroDescription:
           "Platform အသစ်တစ်ခု စတင်မလား၊ ApexOne product တစ်ခု အသုံးချမလား၊ product craft နှင့် engineering ကို တစ်ပြိုင်နက် ပံ့ပိုးပေးပါသည်။",
-        consultation: "အခမ အကြံပေး ချိန်းဆိုရန်",
+        consultation: "အခမဲ့ အကြံပေး ချိန်းဆိုရန်",
         seeProducts: "ထုတ်ကုန်များ ကြည့်ရန်",
         badge: "ဝန်ဆောင်မှု",
         engagement: "Engagement",
