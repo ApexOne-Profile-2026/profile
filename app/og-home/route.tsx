@@ -3,14 +3,15 @@ import { join } from "node:path";
 
 import { ImageResponse } from "next/og";
 
-export const alt = "ApexOne — Software that transforms how businesses run.";
-export const size = {
+export const runtime = "nodejs";
+
+const size = {
   width: 1200,
   height: 630,
 };
-export const contentType = "image/png";
 
-export default async function OpenGraphImage() {
+/** Homepage-only share image — not attached as default OG for other routes. */
+export async function GET() {
   const logoBuffer = await readFile(join(process.cwd(), "public/brand/apexone-logo.png"));
   const logoSrc = `data:image/png;base64,${logoBuffer.toString("base64")}`;
 
@@ -78,8 +79,6 @@ export default async function OpenGraphImage() {
         </div>
       </div>
     ),
-    {
-      ...size,
-    },
+    size,
   );
 }

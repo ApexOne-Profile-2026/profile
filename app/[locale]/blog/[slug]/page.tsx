@@ -17,7 +17,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const dict = getDictionary(isLocale(locale) ? (locale as Locale) : "en");
   const post = getBlogBySlug(slug);
   if (!post) return { title: dict.pages.blogDetail.notFound };
-  return { title: post.title, description: post.excerpt, alternates: { canonical: `/${isLocale(locale) ? locale : "en"}/blog/${post.slug}` }, openGraph: { title: `${post.title} | ${siteConfig.name}`, description: post.excerpt, url: `/${isLocale(locale) ? locale : "en"}/blog/${post.slug}`, type: "article" } };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/${isLocale(locale) ? locale : "en"}/blog/${post.slug}` },
+    openGraph: {
+      title: `${post.title} | ${siteConfig.name}`,
+      description: post.excerpt,
+      url: `/${isLocale(locale) ? locale : "en"}/blog/${post.slug}`,
+      type: "article",
+      images: post.coverImage ? [{ url: post.coverImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ${siteConfig.name}`,
+      description: post.excerpt,
+      images: post.coverImage ? [post.coverImage] : undefined,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {

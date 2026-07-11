@@ -53,40 +53,18 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
     languages: {
       en: "/en",
       my: "/mm",
       "x-default": "/",
     },
   },
+  // No default share image here — homepage logo is only set on `/`, `/en`, `/mm`.
+  // Other pages keep their own Open Graph images (products, blog, etc.).
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://apexonemm.tech",
     siteName: siteConfig.name,
-    title: siteTitle,
-    description: siteDescription,
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "ApexOne logo",
-      },
-      {
-        url: "/brand/apexone-logo.png",
-        width: 500,
-        height: 500,
-        alt: "ApexOne",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
-    images: ["/opengraph-image", "/brand/apexone-logo.png"],
   },
   icons: {
     icon: "/brand/apexone-logo.png",
