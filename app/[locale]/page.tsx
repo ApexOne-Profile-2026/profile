@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { ClientsSection } from "@/src/components/home/ClientsSection";
 import { HeroSection } from "@/src/components/home/HeroSection";
 import { ProductsSection } from "@/src/components/home/ProductsSection";
 import { TechStackSection } from "@/src/components/home/TechStackSection";
@@ -15,6 +16,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <main className="flex flex-1 flex-col">
       <HeroSection locale={locale as Locale} dict={dict} />
       <ProductsSection locale={locale as Locale} dict={dict} />
+      <ClientsSection dict={dict} />
       <TechStackSection dict={dict} />
       <TestimonialsSection dict={dict} />
     </main>

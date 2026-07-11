@@ -1,3 +1,4 @@
+import { ClientsSection } from "@/src/components/home/ClientsSection";
 import { HeroSection } from "@/src/components/home/HeroSection";
 import { ProductsSection } from "@/src/components/home/ProductsSection";
 import { TechStackSection } from "@/src/components/home/TechStackSection";
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="flex flex-1 flex-col">
       <HeroSection />
       <ProductsSection />
+      <ClientsSection />
       <TechStackSection />
       <TestimonialsSection />
     </main>

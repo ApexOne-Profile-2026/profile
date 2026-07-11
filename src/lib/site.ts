@@ -11,14 +11,16 @@ export const navItems = [
   { key: "home", href: "/" },
   { key: "products", href: "/products" },
   { key: "services", href: "/services" },
-  { key: "blog", href: "/blog" },
+  // Temporary: hide Blog from header
+  // { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ] as const;
 
 export const footerCompanyItems = [
   { key: "products", href: "/products" },
   { key: "services", href: "/services" },
-  { key: "blog", href: "/blog" },
+  // Temporary: hide Blog from footer
+  // { key: "blog", href: "/blog" },
   { key: "contact", href: "/contact" },
 ] as const;
 

@@ -62,6 +62,8 @@ export const dictionary = {
         "From checkout counters to classrooms, three product lines built to feel fast, clear, and dependable in daily use.",
       viewAllProducts: "View all products",
       viewDetails: "View Details",
+      clientsEyebrow: "Our Clients",
+      clientsTitle: "Businesses that grow with ApexOne.",
       testimonialsEyebrow: "Testimonials",
       testimonialsTitle: "What partners say after launch.",
       testimonialsDescription:
@@ -252,6 +254,8 @@ export const dictionary = {
         "နေ့စဉ်အသုံးပြုရာတွင် မြန်ဆန်၊ တိကျ ရှင်းလင်းပြီး ယုံကြည်စိတ်ချရသော ApexOne software products များ။",
       viewAllProducts: "ထုတ်ကုန်အားလုံး ကြည့်ရန်",
       viewDetails: "အသေးစိတ်ကြည့်ရန်",
+      clientsEyebrow: "ကျွန်ုပ်တို့၏ Client များ",
+      clientsTitle: "ApexOne နှင့်အတူ လုပ်ကိုင်နေသော Company များ/လုပ်ငန်းများ။",
       testimonialsEyebrow: "ဖောက်သည် အမြင်များ",
       testimonialsTitle: "Launch ပြီးနောက် ပါတနာများ ပြောကြားချက်များ။",
       testimonialsDescription:
