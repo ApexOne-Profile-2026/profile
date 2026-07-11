@@ -57,10 +57,6 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const localized = getLocalizedProduct(product, locale as Locale);
-  const related = products
-    .filter((item) => item.id !== product.id)
-    .slice(0, 2)
-    .map((item) => getLocalizedProduct(item, locale as Locale));
 
   return (
     <main className="flex flex-1 flex-col">
@@ -155,48 +151,6 @@ export default async function ProductPage({
           </FadeIn>
         </div>
       </section>
-
-      {related.length > 0 ? (
-        <section className="border-t border-border/70 bg-surface/40 py-14 sm:py-16">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-foreground">
-                {dict.pages.productDetail.moreFromApex}
-              </h2>
-            </FadeIn>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {related.map((item, relatedIndex) => (
-                <FadeIn key={item.id} delayMs={relatedIndex * 80}>
-                  <Link
-                    href={localizeHref(locale as Locale, `/products/${item.slug}`)}
-                    className="group overflow-hidden rounded-[1.35rem] border border-border/80 bg-background transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[0_24px_50px_-36px_rgba(15,23,42,0.35)]"
-                  >
-                    <div className="relative flex h-40 items-center justify-center bg-[linear-gradient(180deg,#f8fafc_0%,#eef4f8_100%)] px-4 py-5">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={480}
-                        height={300}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="h-full w-auto max-w-full object-contain"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="font-display text-lg font-semibold tracking-[-0.03em] text-foreground">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
-                      <span className="mt-4 inline-flex text-sm font-medium text-foreground transition-opacity group-hover:opacity-70">
-                        {dict.pages.productDetail.viewDetails} →
-                      </span>
-                    </div>
-                  </Link>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
     </main>
   );
 }
