@@ -35,4 +35,9 @@ export const clientCompanies: ClientCompany[] = [
     name: "Tip-Top Online School",
     logo: "/images/clients/tip-top-school.png",
   },
+  {
+    id: "7",
+    name: "Jade Property",
+    logo: "/images/clients/jade.png",
+  },
 ];

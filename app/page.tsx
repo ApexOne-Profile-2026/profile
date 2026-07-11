@@ -1,5 +1,6 @@
 import { ClientsSection } from "@/src/components/home/ClientsSection";
 import { HeroSection } from "@/src/components/home/HeroSection";
+import { HowWeWorkSection } from "@/src/components/home/HowWeWorkSection";
 import { ProductsSection } from "@/src/components/home/ProductsSection";
 import { TechStackSection } from "@/src/components/home/TechStackSection";
 // Temporary: hide Testimonials on home page
@@ -12,6 +13,7 @@ export default function Home() {
       <ProductsSection />
       <ClientsSection />
       <TechStackSection />
+      <HowWeWorkSection />
       {/* <TestimonialsSection /> */}
     </main>
   );

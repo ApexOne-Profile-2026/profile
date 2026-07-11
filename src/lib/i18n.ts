@@ -64,6 +64,28 @@ export const dictionary = {
       viewDetails: "View Details",
       clientsEyebrow: "Our Clients",
       clientsTitle: "Businesses that grow with ApexOne.",
+      howWeWorkEyebrow: "How we work",
+      howWeWorkTitle: "A clear path from idea to launch",
+      howWeWorkDescription:
+        "Structured delivery with transparent milestones — so you always know what's shipping and when.",
+      howWeWorkSteps: {
+        discovery: {
+          title: "Discovery",
+          description: "We align on goals, users, scope, and success metrics before writing code.",
+        },
+        design: {
+          title: "Design",
+          description: "Wireframes and UI prototypes that validate the experience early.",
+        },
+        build: {
+          title: "Build",
+          description: "Agile sprints with demos, code review, and production-ready engineering.",
+        },
+        launch: {
+          title: "Launch",
+          description: "Deployment, monitoring, handover docs, and ongoing support when you need it.",
+        },
+      },
       testimonialsEyebrow: "Testimonials",
       testimonialsTitle: "What partners say after launch.",
       testimonialsDescription:
@@ -256,6 +278,28 @@ export const dictionary = {
       viewDetails: "အသေးစိတ်ကြည့်ရန်",
       clientsEyebrow: "ကျွန်ုပ်တို့၏ Client များ",
       clientsTitle: "ApexOne နှင့်အတူ လုပ်ကိုင်နေသော Company များ/လုပ်ငန်းများ။",
+      howWeWorkEyebrow: "ကျွန်ုပ်တို့၏ လုပ်ငန်းစဉ်",
+      howWeWorkTitle: "Idea မှ Launch အထိ ရှင်းလင်းသော လမ်းကြောင်း",
+      howWeWorkDescription:
+        "Transparent milestone များဖြင့် စနစ်တကျ ပေးပို့ခြင်း — ဘာကို ဘယ်အချိန် ship လုပ်မည်ကို အမြဲသိနိုင်စေရန်။",
+      howWeWorkSteps: {
+        discovery: {
+          title: "Discovery",
+          description: "Code မရေးမီ goals၊ users၊ scope နှင့် success metrics များကို ညှိနှိုင်းသတ်မှတ်ပါသည်။",
+        },
+        design: {
+          title: "Design",
+          description: "Experience ကို အစောပိုင်းတွင် စစ်ဆေးနိုင်သော wireframe နှင့် UI prototype များ။",
+        },
+        build: {
+          title: "Build",
+          description: "Demo၊ code review နှင့် production-ready engineering ပါဝင်သော agile sprint များ။",
+        },
+        launch: {
+          title: "Launch",
+          description: "Deployment၊ monitoring၊ handover docs နှင့် လိုအပ်သည့်အခါ ဆက်လက် support ပေးခြင်း။",
+        },
+      },
       testimonialsEyebrow: "ဖောက်သည် အမြင်များ",
       testimonialsTitle: "Launch ပြီးနောက် ပါတနာများ ပြောကြားချက်များ။",
       testimonialsDescription:

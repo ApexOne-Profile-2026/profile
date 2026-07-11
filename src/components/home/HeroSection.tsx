@@ -24,7 +24,7 @@ export function HeroSection({ locale = defaultLocale, dict = getDictionary(defau
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
             <FadeIn>
-              <div className="flex flex-col gap-6 sm:flex-row sm:items-center lg:flex-col lg:items-start">
+              <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center lg:flex-col lg:items-start">
                 <HeroLogo className="lg:hidden" />
                 <p className="font-display text-sm font-semibold tracking-[0.22em] text-accent/80 uppercase">
                   {dict.home.eyebrow}

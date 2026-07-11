@@ -9,9 +9,9 @@ export function HeroLogo({ className = "", size = "default" }: HeroLogoProps) {
   const dimensions =
     size === "large"
       ? "h-52 w-52 sm:h-60 sm:w-60 lg:h-72 lg:w-72"
-      : "h-28 w-28 sm:h-32 sm:w-32";
+      : "h-40 w-40 sm:h-32 sm:w-32";
 
-  const imageSize = size === "large" ? 288 : 128;
+  const imageSize = size === "large" ? 288 : 160;
 
   return (
     <div
